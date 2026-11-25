@@ -39,6 +39,18 @@ Install the required Python packages:
 pip install -r requirements.txt
 ```
 
+## Feature Engineering
+Run the reusable feature pipeline from the project root:
+
+```bash
+python -m src.feature_engineering
+```
+
+The pipeline writes chronological train/validation splits and the final
+train/test feature datasets to `data/processed/`. See
+`reports/feature_engineering_report.md` for the feature definitions and
+validation details.
+
 ## Load the Cleaned Data
 ```python
 import pandas as pd
@@ -56,4 +68,6 @@ store = pd.read_parquet("data/cleaned/store_cleaned.parquet")
 - **Ali** — Evaluation & Reporting
 
 ## Project Status
-Data cleaning is complete, and the cleaned datasets and documentation are available in the repository. EDA, feature engineering, model training, and evaluation will be completed as the project progresses.
+Data cleaning, EDA, and feature engineering are complete. The processed
+datasets are ready for chronological model validation and training. Model
+training, MLflow experiment tracking, and evaluation remain future stages.
